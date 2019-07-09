@@ -50,7 +50,7 @@ class TcpSocket
     bool Bind(std::string &ip, uint16_t port)
     {
       struct sockaddr_in addr;
-      addr.sin_family = AF_FILE;
+      addr.sin_family = AF_INET;
       addr.sin_port = htons(port);
       addr.sin_addr.s_addr = inet_addr(ip.c_str());
       socklen_t len = sizeof(struct sockaddr_in);

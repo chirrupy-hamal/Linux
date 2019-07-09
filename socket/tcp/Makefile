@@ -11,3 +11,5 @@ tcp_client:tcp_client.cpp
 
 clean:
 	rm tcp_client tcp_server
+
+rebuild:clean
