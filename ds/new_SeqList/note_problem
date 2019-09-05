@@ -1,0 +1,3 @@
+assert
+free之后指向的是NULL吗
+size_t ssize_t
