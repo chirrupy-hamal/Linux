@@ -1,5 +1,5 @@
 
-#include"SeqStack.h"
+#include"new_SeqStack.h"
 
 typedef enum 
 {
