@@ -1,6 +1,6 @@
 #include<string.h>
 
-#include"SeqStack.h"
+#include"new_SeqStack.h"
 
 void BracketMatch(const char *str, int size)
 {
