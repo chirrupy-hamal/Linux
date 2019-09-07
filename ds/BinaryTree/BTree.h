@@ -1,6 +1,4 @@
 #pragma once 
-#include<malloc.h>
-#include<assert.h>
 
 #include"LinkQueue.h"
 #include"SeqStack.h"
@@ -14,7 +12,7 @@ typedef struct BTreeNode
   struct BTreeNode *right;
 } BTreeNode;
 
-BTreeNode *CreateNode(DataType data)
+static BTreeNode *CreateNode(DataType data)
 {
   BTreeNode *node = (BTreeNode*)malloc(sizeof(BTreeNode));
   node->data = data;
