@@ -51,5 +51,5 @@ int main()
   BTreeNode *result = Find(root, 1);
   printf("%d\n", result->data);
 
-  printf("IsCompleteTree:%d\n", IsCompleteTree(root));
+  printf("IsCompleteTree:%d\n", IsCompleteBinaryTree(root));
 }
