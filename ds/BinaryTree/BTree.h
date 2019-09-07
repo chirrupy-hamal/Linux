@@ -443,7 +443,7 @@ void PostOrderLoop(BTreeNode *root)
       //如果右子树已经被遍历过了
       SeqStackPop(&stack);
       printf("%d ", top->data);
-      last = top;//记录结点
+      last = top;//记录结点，如果不记录的话，死循环
     }
     else
     {
