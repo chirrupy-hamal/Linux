@@ -315,7 +315,7 @@ BTreeNode *Find(BTreeNode *root, DataType data)
 //使用层序遍历的方法，只不过还要把空结点加入到队列中，
 //一旦NULL出现在队列中，那么它的后面也只能是NULL，
 //这就是完全二叉树，而且空树既是完全二叉树，又是满二叉树。
-int IsCompleteTree(BTreeNode *root)
+int IsCompleteBinaryTree(BTreeNode *root)
 {
   Queue queue;
   QueueInit(&queue);
