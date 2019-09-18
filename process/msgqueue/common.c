@@ -95,7 +95,7 @@ int SendMsg(int msgid, char *buf, int size, int type)
   }
   msg_buf.type = type;
   strcpy(msg_buf.text, buf);
-  int ret = msgsnd(msgid, &msg_buf, sizeof(msg_buf.text), 0);
+  int ret = msgsnd(msgid, &msg_buf, sizeof(msg_buf.text), 0);//阻塞
   if(ret < 0)
   {
     perror("msgsnd");
@@ -108,7 +108,7 @@ int RecvMsg(int msgid, char *buf, int size, int type)
 {
   (void)size;
   Msgbuf msg_buf;
-  ssize_t ret = msgrcv(msgid, &msg_buf, sizeof(msg_buf.text), type, 0);
+  ssize_t ret = msgrcv(msgid, &msg_buf, sizeof(msg_buf.text), type, 0);//阻塞
   //参数3是单纯消息的长度，这个长度不包含保存消息类型的哪个长整型。
   //参数4：
   //type == 0，返回队列第一条消息；
