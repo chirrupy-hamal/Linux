@@ -39,13 +39,13 @@ int main()
   //      其中，sa_family是用来存放地址域的，4字节；sa_data是用来数据填充的。
   //      struct sockaddr_in  //IPV4的地址信息结构
   //      {
-  //        __SOCKADDR_COMMON (sin_);//预留4个字节的地址域
+  //        __SOCKADDR_COMMON (sin_);//预留2个字节的地址域
   //        in_port_t sin_port;//其中，typedef uint16_t in_port_t; sin_port是端口号
-  //        struct in_addr sin_addr;//网络地址
+  //        struct in_addr sin_addr;//4字节网络地址
   //        unsigned char sin_zero[sizeof(struct sockaddr) -
   //                               __SOCKADDR_COMMON_SIZE -
   //                               sizeof(in_port_t) -
-  //                               sizeof(struct in_addr)];//真正剩下的字节数，专门做填充的。
+  //                               sizeof(struct in_addr)];//真正剩下的8字节数，专门做填充的。
   //      };
   //      struct in_addr
   //      {
@@ -56,6 +56,8 @@ int main()
   
   //先定义地址信息
   struct sockaddr_in addr;
+  //socket API都用struct sockaddr *类型表示, 在使用的时候需要强制转化成sockaddr_in; 
+  //这样的好处是程序的通用性, 可以接收IPv4, IPv6, 以及UNIX Domain Socket各种类型的sockaddr结构体指针做为参数。
   addr.sin_family = AF_INET;
   addr.sin_port = htons(9000);//推荐不要使用0~1024之间的，因为已经被操作系统预留出来给某些特殊的协议去使用。
                        //咱们能用，只是不推荐使用。
