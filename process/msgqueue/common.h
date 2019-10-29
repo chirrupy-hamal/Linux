@@ -30,12 +30,11 @@ typedef struct Msgbuf
   char text[1024];
 } Msgbuf;
 
-
-int CreateMsg();//一个进程创建，一个进程打开就行了
-int OpenMsg();
+int CreateMsg();//一个进程创建，
+int OpenMsg();//一个进程打开就行了
 int DestroyMsg(int msgid);
 int SendMsg(int msgid, char *buf, int size, int type);
-//发消息的时候，服务器和我客户端都有可能会调
+//发消息的时候，服务器和客户端都有可能会调
 //所以得根据调用者的不同来传入不同的类型
 //消息队列是全双工
 int RecvMsg(int msgid, char *buf, int size, int type);
