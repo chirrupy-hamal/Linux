@@ -1,6 +1,6 @@
-#include"common.h"
 #include<stdio.h>
 #include<unistd.h>
+#include"common.h"
 
 int main()
 {
